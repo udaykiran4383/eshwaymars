@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+
+#subdivisions {
+    padding-top: 3%;
+    background: url("../img/bg3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#subdivisions h1 {
+    color: white;
+    margin-top: 30px;
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 63px;
+}
+
+.hero-section{
+    text-align: center;
+}
+
+
+.teamCard {
+    /* background: rgba(217, 217, 217, 0.1); */
+    /* backdrop-filter: blur(7.5px); */
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 20px;
+    /* height: 346px; */
+    width: 90%;
+    margin-top: 20px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    padding: 24.25px 65px 60px 65px;
+}
+
+.teamCard h2 {
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 39px;
+    color: white;
+}
+
+.teamCardMembers {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.memberCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.memberCard img {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+}
+
+.memberCard h3 {
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 39px;
+}
+
+.memberSocials{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.memberSocials a {
+    text-decoration: none;
+    color: orangered !important;
+    font-size: 30px;
+    
+}
+
+.tooltip1 {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+}
+
+.tooltip1 a {
+    text-decoration: none;
+    color: orangered !important;
+    font-size: 30px;
+    background: #fff;
+
+}
+
+.tooltip1 .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    font-size: 15px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip1 .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip1:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.no-border-button{
+    border: 0px !important;
+    background: #fff !important;
+}
+
+/* Team page */
+
+.three-section{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.teamCard {
+    /* width: 94vw; */
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: space-evenly; */
+    /* flex-wrap: wrap; */
+}
+
+.member {
+    background-color: white;
+    border: 2px solid white;
+    margin: 2%;
+    padding: 2% 2%;
+    box-shadow: 8px 8px 5px rgb(18, 18, 27), -8px -8px 5px rgb(18, 18, 27);
+    width: 50%;
+    /* width: 15vw; */
+}
+
+.member-3 {
+    background-color: white;
+    border: 2px solid white;
+    margin: 2%;
+    padding: 2% 2%;
+    box-shadow: 8px 8px 5px rgb(18, 18, 27), -8px -8px 5px rgb(18, 18, 27);
+    width: 33%;
+    /* width: 15vw; */
+}
+
+.teamCard img {
+    width: 75%;
+    border-radius: 50%;
+    border: 4px solid orangered;
+}
+
+h5 {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.role {
+    color: orangered;
+}
+
+i {
+    color: orangered;
+}
+
+.half-section {
+    justify-content: space-evenly;
+    width: 50%;
+
+}
+
+@media (max-width:1050px) and (min-width:600px) {
+    .teamCard {
+        flex-direction: column;
+    }
+
+    .teamCard img {
+        width: 70%;
+    }
+
+    .half-section {
+        width: 100%;
+    }
+
+    .member {
+        padding: 5%;
+        width: 40%;
+        margin: 5% 0;
+        width: 45%;
+    }
+
+    .member-3 {
+        padding: 5%;
+        width: 70%;
+        margin: 5% 0;
+        width: 70%;
+    }
+
+    .three-section{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width:600px) {
+    .teamCard {
+        flex-direction: column;
+        padding: 10%;
+    }
+
+    .teamCard img {
+        width: 70%;
+    }
+
+    .half-section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .member {
+        padding-top: 14px;
+        margin: 7% 0;
+        width: 100%;
+    }
+
+    .member-3 {
+        padding-top: 14px;
+        margin: 7% 0;
+        width: 100%;
+    }
+
+    .three-section{
+        flex-direction: column;
+    }
+}

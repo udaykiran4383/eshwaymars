@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>preloader</title>
+  <style>
+    body {
+      background-color: #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #animationWindow {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="animationWindow"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <script>
+    var select = function(s) {
+      return document.querySelector(s);
+    },
+    animationWindow = select('#animationWindow'),
+    anim = lottie.loadAnimation({
+      container: animationWindow,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets.codepen.io/35984/moon_rover.json'
+    });
+
+    anim.setSpeed(1);
+
+    function scrubLottieTimeline(animation) {
+      let isDragging = false;
+      let duration = animation.getDuration(true);
+
+      animationWindow.addEventListener('mousedown', function() {
+        isDragging = true;
+      });
+
+      animationWindow.addEventListener('mouseup', function() {
+        isDragging = false;
+      });
+
+      animationWindow.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+          let rect = animationWindow.getBoundingClientRect();
+          let xPos = e.clientX - rect.left;
+          let progress = xPos / rect.width;
+          let frame = progress * duration;
+          animation.goToAndStop(frame, true);
+        }
+      });
+    }
+
+    anim.addEventListener('DOMLoaded', function() {
+      scrubLottieTimeline(anim);
+    });
+  </script>
+</body>
+</html>
